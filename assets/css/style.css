@@ -1,5 +1,5 @@
 /**
-* Template Name: Delicious - v4.4.0
+* Template Name: Delicious - v4.5.0
 * Template URL: https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
@@ -146,9 +146,7 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
   }
 }
-.btn {
-  background-color: #ffa012;
-}
+
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -1045,9 +1043,9 @@ section {
 # Chefs
 --------------------------------------------------------------*/
 .chefs {
-  background: url("../img/chefs-bg.jpg") center center no-repeat;
+  background: url("../img/reservar.jpg") center center no-repeat;
   background-size: cover;
-  padding: 60px 0;
+ 
   position: relative;
 }
 .chefs::before {
@@ -1057,7 +1055,7 @@ section {
   right: 0;
   top: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
+   
   z-index: 9;
 }
 .chefs .container {
@@ -1138,7 +1136,7 @@ section {
 --------------------------------------------------------------*/
 .testimonials {
   padding: 80px 0;
-  background: url("../img/testimonials-bg.jpg") no-repeat;
+  background: url("../img/gallery/gallery-7.jpg") no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
