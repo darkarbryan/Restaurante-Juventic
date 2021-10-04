@@ -31,10 +31,7 @@ class Carrito {
 
         if(productosLS === infoProducto.id){
             Swal.fire({
-                type: 'error',
-                title: 'Lo sentimos!',
-                text: 'El producto ya está agregado',
-                showConfirmButton: false,
+                type: 'errorrmButton: false,
                 timer: 1000
             })
         }
