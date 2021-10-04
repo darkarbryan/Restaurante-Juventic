@@ -4,7 +4,6 @@ const carrito = document.getElementById('carrito');
 const procesarCompraBtn = document.getElementById('procesar-compra');
 const cliente = document.getElementById('cliente');
 const correo = document.getElementById('correo');
- 
 
 cargarEventos();
 
@@ -49,23 +48,21 @@ function procesarCompra() {
     else {
 
         //aqui se coloca el user id generado en el emailJS
-    
- 
-emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
+        emailjs.init('user_CEozz2F39lJJOLF5mJiDA')
 
         /* AGREGAR DATOS DETALLE DEL PEDIDO A UN TEXT AREA */
         const textArea = document.createElement('textarea');
-        textArea.id = "reserva";
-        textArea.name = "reserva";
+        textArea.id = "detalleCompra";
+        textArea.name = "detalleCompra";
         textArea.cols = 60;
         textArea.rows = 10;
         textArea.hidden = true;
         productosLS = compra.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto) {
             textArea.innerHTML += `
-                <b> Producto : ${producto.titulo} <br>
+                 Producto : ${producto.titulo} <br>
                  Precio : ${producto.precio} <br>
-                 Cantidad: ${producto.cantidad} <br>  
+                 Cantidad: ${producto.cantidad} <br>
                 --------------------------------------------- <br>
                 `;
         });
@@ -86,8 +83,8 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
                 enviado.style.display = 'block';
                 enviado.width = '150';
 
-                const serviceID = 'service_zvz87yl';
-                const templateID = 'template_jrzcupg';
+                const serviceID = 'default_service';
+                const templateID = 'template_3SA9LsqQ';
 
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
