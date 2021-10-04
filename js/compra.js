@@ -53,7 +53,7 @@ function procesarCompra() {
  
 emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
 
-        /* AGREGAR DATOS DETALLE DEL PEDIDO A UN TEXT AREA */
+        /* AGREGAR  DATOS DETALLE DEL PEDIDO A UN TEXT gg*/
         const textArea = document.createElement('textarea');
         textArea.id = "reserva";
         textArea.name = "reserva";
