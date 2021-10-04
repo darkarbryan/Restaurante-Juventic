@@ -53,7 +53,7 @@ function procesarCompra() {
  
 emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
 
-        /* AGREGAR  DATOS DETALLE DEL PEDIDO A UN TEXT gg*/
+        /* AGREGAR DATOS DETALLE DEL PEDIDO A UN TEXT AREA */
         const textArea = document.createElement('textarea');
         textArea.id = "reserva";
         textArea.name = "reserva";
@@ -62,11 +62,11 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
         textArea.hidden = true;
         productosLS = compra.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto) {
-            textArea.innerHTML +=`
-                 Producto : ${producto.titulo}   
-                 Precio : ${producto.precio}  
-                 Cantidad: ${producto.cantidad}   
-                
+            textArea.innerHTML += `
+                <b> Producto : ${producto.titulo} <br>
+                 Precio : ${producto.precio} <br>
+                 Cantidad: ${producto.cantidad} <br>  
+                --------------------------------------------- <br>
                 `;
         });
 
@@ -108,4 +108,3 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
 
     }
 }
-
