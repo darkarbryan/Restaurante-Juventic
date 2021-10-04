@@ -4,7 +4,6 @@ const carrito = document.getElementById('carrito');
 const procesarCompraBtn = document.getElementById('procesar-compra');
 const cliente = document.getElementById('cliente');
 const correo = document.getElementById('correo');
- 
 
 cargarEventos();
 
@@ -48,9 +47,7 @@ function procesarCompra() {
     }
     else {
 
-        //aqui se coloca el user id generado en el emailJS
-    
- 
+      
 emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
 
         /* AGREGAR DATOS DETALLE DEL PEDIDO A UN TEXT AREA */
@@ -63,10 +60,10 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
         productosLS = compra.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto) {
             textArea.innerHTML += `
-                <b> Producto : ${producto.titulo} <br>
-                 Precio : ${producto.precio} <br>
-                 Cantidad: ${producto.cantidad} <br>  
-                --------------------------------------------- <br>
+          <br> Producto : ${producto.titulo}  
+                 Precio : ${producto.precio}  
+                 Cantidad: ${producto.cantidad}  
+                ---------------------------------------------  
                 `;
         });
 
@@ -108,3 +105,4 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
 
     }
 }
+
