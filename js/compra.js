@@ -47,23 +47,23 @@ function procesarCompra() {
     }
     else {
 
-        //aqui se coloca el user id generado en el emailJS
-        emailjs.init('user_CEozz2F39lJJOLF5mJiDA')
+      
+emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
 
         /* AGREGAR DATOS DETALLE DEL PEDIDO A UN TEXT AREA */
         const textArea = document.createElement('textarea');
-        textArea.id = "detalleCompra";
-        textArea.name = "detalleCompra";
+        textArea.id = "reserva";
+        textArea.name = "reserva";
         textArea.cols = 60;
         textArea.rows = 10;
         textArea.hidden = true;
         productosLS = compra.obtenerProductosLocalStorage();
         productosLS.forEach(function (producto) {
             textArea.innerHTML += `
-                 Producto : ${producto.titulo} <br>
-                 Precio : ${producto.precio} <br>
-                 Cantidad: ${producto.cantidad} <br>
-                --------------------------------------------- <br>
+                 Producto : ${producto.titulo}  
+                 Precio : ${producto.precio}  
+                 Cantidad: ${producto.cantidad}  
+                 
                 `;
         });
 
@@ -83,8 +83,8 @@ function procesarCompra() {
                 enviado.style.display = 'block';
                 enviado.width = '150';
 
-                const serviceID = 'default_service';
-                const templateID = 'template_3SA9LsqQ';
+                const serviceID = 'service_zvz87yl';
+                const templateID = 'template_jrzcupg';
 
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
