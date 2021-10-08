@@ -23,30 +23,7 @@ function cargarEventos() {
 
 }
 
-function procesarCompra() {
-    // e.preventDefault();
-    if (compra.obtenerProductosLocalStorage().length === 0) {
-        Swal.fire({
-            type: 'error',
-            title: 'Oops...',
-            text: 'No hay productos, selecciona alguno',
-            showConfirmButton: false,
-            timer: 2000
-        }).then(function () {
-            window.location = "index.html";
-        })
-    }
-    else if (cliente.value === '' || correo.value === '') {
-       
-              Swal.fire({
-                type: 'info',
-                title: 'Lo sentimos!',
-                text: 'Llene todos los campos',
-                showConfirmButton: false,
-                timer: 1000
-            })
-    }
-    else {
+function procesarCompra() { 
 
       
 emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
@@ -58,15 +35,10 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
         textArea.cols = 60;
         textArea.rows = 10;
         textArea.hidden = true;
-        productosLS = compra.obtenerProductosLocalStorage();
-        productosLS.forEach(function (producto) {
-            textArea.innerHTML += `
-                 Producto : ${producto.titulo}  
-                 Precio : ${producto.precio}  
-                 Cantidad: ${producto.cantidad}  
-                 
-                `;
-        });
+      
+            textArea= cliente.value
+              
+  
 
         carrito.appendChild(textArea);
 
@@ -85,7 +57,7 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
                 enviado.width = '150';
 
                 const serviceID = 'service_zvz87yl';
-                const templateID = 'template_jrzcupg';
+                const templateID = 'template_ieclegs';
 
                 emailjs.sendForm(serviceID, templateID, this)
                     .then(() => {
@@ -102,8 +74,4 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
                         alert("Error al enviar el email\r\n Response:\n " + JSON.stringify(err));
                     });
             });
-
-
-    }
-}
-
+ 

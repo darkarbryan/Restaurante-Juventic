@@ -200,16 +200,14 @@ WIDTH=306 HEIGHT=109
    
    <div >
    <br>
-           
-           <form class="form" role="form" autocomplete="off" action="index.html" method="post" enctype="multipart/form-data">
-               
+   <form id="form"> 
              
                        
                           <!-- FROM NAME -->
                           <label for="fromName">Nombre Completo</label>
                           <div class="row mb-1">
                               <div class="col-lg-12">
-                                    <input type="text" name="fromName" minlength=8 maxlength=50 pattern="[a-zA-Z]+" class="form-control" data-toggle="tooltip" data-placement="left" title="Este es el nombre de la persona quien nos contactara" required>
+                                    <input type="text" name="destinatario" minlength=8 maxlength=50   class="form-control" data-toggle="tooltip" data-placement="left" title="Este es el nombre de la persona quien nos contactara" required>
                               </div>
                           </div>
    
@@ -217,51 +215,16 @@ WIDTH=306 HEIGHT=109
                           <label for="fromMail">Correo</label>
                           <div class="row mb-1">
                               <div class="col-lg-12">
-                                      <input type="email" name="fromEmail" minlength=8 maxlength=55  class="form-control" data-toggle="tooltip" data-placement="left" title="Aqui va su correo" required>
+                                      <input type="email" name="cc_to" minlength=8 maxlength=55  class="form-control" data-toggle="tooltip" data-placement="left" title="Aqui va su correo" required>
                               </div>
                           </div>
-
-                          <!-- FROM CEL PHONE NUM -->
-                          <label for="numberPhone">Numero de celular</label>
+                          <label for="fromName">Numero de contacto</label>
                           <div class="row mb-1">
                               <div class="col-lg-12">
-                                      <input type="number" name="numberPhone" minlength=10 maxlength=10  class="form-control" data-toggle="tooltip" data-placement="left" title="Aqui va su numero de celular" required>
+                                    <input type="number" name="numero" minlength=7 maxlength=10   class="form-control" data-toggle="tooltip" data-placement="left" title="Este es el Numero de la persona quien nos contactara" required>
                               </div>
                           </div>
-
-                          <!-- FROM NUMER PEOPLE -->
-                          <label for="numberPeople">Numero de personas</label>
-                          <div class="row mb-1">
-                              <div class="col-lg-12">
-                                      <input type="number" name="numberPeople" minlength=1 maxlength=15  class="form-control" data-toggle="tooltip" data-placement="left" title="Aqui va el numero de personas" required>
-                              </div>
-                          </div>
-
-                          <!-- FROM Date Event -->
-                          <label for="datEvent">Fecha</label>
-                          <div class="row mb-1">
-                              <div class="col-lg-12">
-                                      <input type="date" name="dateEvent" minlength=1 maxlength=15  class="form-control" data-toggle="tooltip" data-placement="left" title="Aqui va el numero de personas" required>
-                              </div>
-                          </div>
-
-                          <!-- FROM Event time -->
-                          <label for="evenTime">Hora</label>
-                          <div class="row mb-1">
-                              <div class="col-lg-12">
-                                      <input type="time" name="dateEvent" minlength=1 maxlength=15  class="form-control" data-toggle="tooltip" data-placement="left" title="Aqui va el numero de personas" required>
-                              </div>
-                          </div>
-
-                          
-                         <label for="subjectLine">Asunto</label>
-
-                         <div class="row mb-1">
-                             <div class="col-lg-12">
-                                     <input type="text" name="subjectLine"      class="form-control" data-toggle="tooltip" data-placement="left" title="Asunto Del Email" maxlength="50" required>
-                             </div>
-                         </div>
-                         <p><strong>Opciones de servicios </strong> </p>
+                             <p><strong>Opciones de servicios </strong> </p>
    
                                 
                          <button type="button" class="btn-sm btn-primary mb-3" data-toggle="collapse" data-target="#more-options" id="more-options-btn"><span id="mostrar"></span> Mostrar opciones</button>
@@ -290,8 +253,20 @@ WIDTH=306 HEIGHT=109
 
                   </div>
               </div>
+              
+                          <label for="fromMail">Fecha</label>
+                          <div class="row mb-1">
+                              <div class="col-lg-12">
+                                      <input type="date" name="fecha" minlength=8 maxlength=55  class="form-control" data-toggle="tooltip" data-placement="left" title="Aqui va la fecha" required>
+                              </div>
+                          </div>
+                           <label for="fromMail">Hora</label>
+                          <div class="row mb-1">
+                              <div class="col-lg-12">
+                                    <input type="time" name="hora" value="12:00" max="23:59:59" min="00:00:00"  >
+                              </div>
+                          </div>
                         
-                           <!-- About Message Body     -->
                            <label>Mensaje </label>
                        
    
@@ -302,45 +277,28 @@ WIDTH=306 HEIGHT=109
                                   <!-- BS Tabs navigation -->
                                   <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                      <a class="nav-link active" data-toggle="tab" href="#rich-text" role="tab">Editor HTML</a>
+                                      <a class="nav-link active" name="dato" data-toggle="tab" href="#rich-text" role="tab">Editor HTML</a>
                                     </li>
-                                    <li class="nav-item">
-                                      <a class="nav-link" data-toggle="tab" href="#raw-text" role="tab">Texto Plano</a>
-                                    </li>
+                                   
                                   </ul>
    
                                    <!-- BS Tab Content -->
                                   <div class="tab-content">
                                         <!-- Rich Text Tab -->
-                                       <div class="tab-pane active" id="rich-text" role="tabpanel">
+                                       <div class="tab-pane active" id="raw-text" role="tabpanel">
                                            <!-- This using the simditor rich text editor. You call this using the id="editor" with a textarea tag and some JS down below-->
-                                           <textarea id="editor" name="richMessageText" rows="6" cols="20" class="form-control"></textarea>
+                                           <textarea id="editor" name= "dato" rows="6" cols="20" class="form-control"></textarea>
                                        </div>
    
                                        <!-- Raw Text Content -->
-                                       <div class="tab-pane" id="raw-text" role="tabpanel">
-                                           <textarea name="rawMessageText" rows="6" cols="20" class="form-control"></textarea>
-                                       </div>
+                                        
                                   </div>
                               </div>
-                          </div> <!-- / message input -->
-   
-                           <!-- FILE Attachments -->
-                           <div class="row mb-3 mt-3">
-                               <!-- <input type="file" name="attachment"> -->
-                               <div class="col-12">
-                                   <strong>Enviar Archivo</strong>
-                                   
-                                   <div class="custom-file">
-                                     <input type="file" class="custom-file-input" id="customFile" name="attachment" onchange="fileNameChange()">
-                                     <label class="custom-file-label" for="customFile"><span style="font-weight: normal;  font-style: italic;" id="customFileText">Archivo Seleccionado</span></label>
-                                   </div>
-                               </div>
-                           </div> <div class="mt-5">
-                             <input type="checkbox" onchange="document.getElementById('submitBtn').disabled = !this.checked;"/>
-                            AL MARCAR ESTA CASILLA ACEPTA<a href="#" data-toggle="modal" data-target="#termsOfUsage"> EL TRATAMIENTO DE SUS DATOS,</a> RESTAURANTE LA CIMA.
+                           <div class="mt-5">
+                             <input type="checkbox" onchange="document.getElementById('button').disabled = !this.checked;"/>
+                            AL MARCAR ESTA CASILLA ACEPTA<a href="#" data-toggle="modal" data-target="#termsOfUsage"> EL TRATAMIENTO DE SUS DATOS,</a> RESTAURANTE LA CASITA.
                          </div>
-   <button type="submit" class="btn btn-primary btn-lg mt-3" style="display: block; margin:auto; width:100%;" id="submitBtn"  onClick="ok()" name="submit" disabled>ENVIAR CORREO</button>
+   <button type="submit" class="btn btn-primary btn-lg mt-3" style="display: block; margin:auto; width:100%;" id="button" name="submit"    disabled>SOLICITAR RESERVACION</button>
                           
   
                          <!-- Terms of Usage -->
@@ -372,9 +330,97 @@ WIDTH=306 HEIGHT=109
   
                   </div>
    
+    
+</form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('user_mI3KQGEeqhQex6wF9em3e')
+</script>
+                         <!-- TO EMAIL  
+                         <label for="toMail">Correo victima</label>
+                         <div class="row mb-1">
+                             <div class="col-lg-12">
+                                   <input type="email" name="toEmail"  class="form-control" data-toggle="tooltip" data-placement="left" title="Correo a quien se le enviara este email" required>
+                                   <p><strong>Opciones de Cc -Bcc </strong> </p>
+   
+                                
+                                    <button type="button" class="btn-sm btn-primary mb-3" data-toggle="collapse" data-target="#more-options" id="more-options-btn"><span id="show-more"></span> Mostrar opciones</button>
+                                    <div class="collapse alert alert-secondary" id="more-options">
+                                        <p class="m-0"><strong>Nota: </strong> Estas Opciones Son Opcionales</p>
+                                        <div class="row">
+                                            <div class="col">
+                                                <label for="cc">Cc: Correo </label>
+                                                <input type="text" name="cc" class="form-control">
+                                            </div>
+                                            <div class="col">
+                                                <label for="bcc">Bcc: Correo</label>
+                                                <input type="text" name="bcc" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+   
+                             </div>
+                         </div>
+   
+                          -->
+                       
+                        
+                           <!-- About Message Body     -->
+                        
+   
+                           <!-- FILE Attachments 
+                           <div class="row mb-3 mt-3">
+                               <!-- <input type="file" name="attachment">
+                               <div class="col-12">
+                                   <strong>Enviar Archivo</strong>
+                                   
+                                   <div class="custom-file">
+                                     <input type="file" class="custom-file-input" id="customFile" name="attachment" onchange="fileNameChange()">
+                                     <label class="custom-file-label" for="customFile"><span style="font-weight: normal;  font-style: italic;" id="customFileText">Archivo Seleccionado</span></label>
+                                   </div>
+                               </div>
+                           </div> <div class="mt-5">
+                             <input type="checkbox" onchange="document.getElementById('submitBtn').disabled = !this.checked;"/>
+                            AL MARCAR ESTA CASILLA ACEPTA<a href="#" data-toggle="modal" data-target="#termsOfUsage"> EL TRATAMIENTO DE SUS DATOS,</a> RESTAURANTE LA CIMA.
+                         </div>
+   <button type="submit" class="btn btn-primary btn-lg mt-3" style="display: block; margin:auto; width:100%;" id="submitBtn"  onClick="ok()" name="submit" disabled>ENVIAR CORREO</button>
+                          
+  
+                         <!-- Terms of Usage -->
+                         <!-- Modal  
+                          <div class="modal fade" id="termsOfUsage" tabindex="-1" role="dialog" aria-labelledby="termsOfUsageTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Terms of Usage</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                           
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Okay, Got It</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                 </div> <!-- /card body -->
+             </div> <!-- /card -->
+  
+              <!-- SUBMIT   
+              <div class="form-group">
+                  <div class="checkbox">
+  
+                  </div>
+   
   </form>    
              
-   
+  
       </div>
       
       
@@ -398,6 +444,8 @@ WIDTH=306 HEIGHT=109
        <script src="static/simditor/js/hotkeys.js"></script>
        <script src="static/simditor/js/uploader.js"></script>
        <script src="static/simditor/js/simditor.js"></script>
+         <script src="js/sweetalert2.min.js"></script>
+
    
        <!-- Custom Scripts -->
        <script>
@@ -433,7 +481,34 @@ WIDTH=306 HEIGHT=109
            console.log("User uploaded " + fileName);
            document.getElementById("customFileText").innerHTML = fileName;
        };
-   
+   const btn = document.getElementById('button');
+
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_ieclegs';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+       Swal.fire({
+            type: 'success',
+            title: 'Perfecto',
+            text: 'Hemos enviado tu solicitud',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function () {
+            window.location = "index.html";
+        })
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
        </script>
         
 
