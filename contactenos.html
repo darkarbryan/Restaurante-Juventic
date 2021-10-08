@@ -45,7 +45,7 @@
               <li><a class="nav-link scrollto  bi bi-house" href="index.html">Inicio</a></li>
               <li><a class="nav-link scrollto bi bi-person-circle" href="informacion.html">¿Quienes somos?</a></li>
               <li><a class="nav-link scrollto bi bi-receipt-cutoff" href="menu.html">Platos</a></li>
-              <li><a class="nav-link scrollto  bi bi-ui-checks-grid" href="">Servicios</a></li>
+              <li><a class="nav-link scrollto  bi bi-ui-checks-grid" href="servicios.html">Servicios</a></li>
               <li><a class="nav-link scrolltobi active bi-telephone-plus" href="contacto.html">Contactanos</a></li>
               <li><a class="nav-link scrollto bi bi-chat-dots-fill" href="index.html#testimonials">Testimonios</a></li> 
         </ul>
@@ -267,7 +267,7 @@ WIDTH=306 HEIGHT=109
                               </div>
                           </div>
                         
-                           <label>Mensaje </label>
+                              <label>Mensaje </label>
                        
    
                            <!-- Message Body Input -->
@@ -277,23 +277,28 @@ WIDTH=306 HEIGHT=109
                                   <!-- BS Tabs navigation -->
                                   <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item">
-                                      <a class="nav-link active" name="dato" data-toggle="tab" href="#rich-text" role="tab">Editor HTML</a>
+                                      <a class="nav-link  " data-toggle="tab" href="#rich-text" role="tab">Editor HTML</a>
                                     </li>
-                                   
+                                    <li class="nav-item">
+                                      <a class="nav-link active" data-toggle="tab" href="#raw-text" role="tab">Texto Plano</a>
+                                    </li>
                                   </ul>
    
                                    <!-- BS Tab Content -->
                                   <div class="tab-content">
                                         <!-- Rich Text Tab -->
-                                       <div class="tab-pane active" id="raw-text" role="tabpanel">
+                                       <div class="tab-pane active" id="rich-text" role="tabpanel">
                                            <!-- This using the simditor rich text editor. You call this using the id="editor" with a textarea tag and some JS down below-->
-                                           <textarea id="editor" name= "dato" rows="6" cols="20" class="form-control"></textarea>
+                                           <textarea id="editor" name="dato" rows="6" cols="20" class="form-control"></textarea>
                                        </div>
    
                                        <!-- Raw Text Content -->
-                                        
+                                       <div class="tab-pane" id="raw-text" role="tabpanel">
+                                           <textarea name="dato" rows="6" cols="20" class="form-control"></textarea>
+                                       </div>
                                   </div>
                               </div>
+                          </div> <!-- / message input -->
                            <div class="mt-5">
                              <input type="checkbox" onchange="document.getElementById('button').disabled = !this.checked;"/>
                             AL MARCAR ESTA CASILLA ACEPTA<a href="#" data-toggle="modal" data-target="#termsOfUsage"> EL TRATAMIENTO DE SUS DATOS,</a> RESTAURANTE LA CASITA.
