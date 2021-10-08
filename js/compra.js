@@ -37,13 +37,14 @@ function procesarCompra() {
         })
     }
     else if (cliente.value === '' || correo.value === '') {
-        Swal.fire({
-            type: 'error',
-            title: 'Oops...',
-            text: 'Ingrese todos los campos requeridos',
-            showConfirmButton: false,
-            timer: 2000
-        })
+       
+              Swal.fire({
+                type: 'info',
+                title: 'Lo sentimos!',
+                text: 'Llene todos los campos',
+                showConfirmButton: false,
+                timer: 1000
+            })
     }
     else {
 

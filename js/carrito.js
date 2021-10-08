@@ -4,23 +4,29 @@ class Carrito {
     comprarProducto(e){
         e.preventDefault();
         //Delegado para agregar al carrito
-        if(e.target.classList.contains('agregar-carrito')){
+  
+   if(e.target.classList.contains('agregar-carrito')){
+        
             const producto = e.target.parentElement.parentElement;
             //Enviamos el producto seleccionado para tomar sus datos
             this.leerDatosProducto(producto);
              
         }
     }
+    
 
     //Leer datos del producto
     leerDatosProducto(producto){
         const infoProducto = {
+        
             imagen : producto.querySelector('img').src,
             titulo: producto.querySelector('h4').textContent,
             precio: producto.querySelector('.precio span').textContent,
             id: producto.querySelector('a').getAttribute('data-id'),
-            cantidad: 1
+            cantidad: producto.querySelector('input').value,
+            
         }
+        
         let productosLS;
         productosLS = this.obtenerProductosLocalStorage();
         productosLS.forEach(function (productoLS){
@@ -28,7 +34,7 @@ class Carrito {
                 productosLS = productoLS.id;
             }
         });
-
+ 
         if(productosLS === infoProducto.id){
             Swal.fire({
                 type: 'info',
