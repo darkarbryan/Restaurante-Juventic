@@ -74,4 +74,4 @@ emailjs.init("user_mI3KQGEeqhQex6wF9em3e");
                         alert("Error al enviar el email\r\n Response:\n " + JSON.stringify(err));
                     });
             });
- 
+}
